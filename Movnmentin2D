@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
         {
 
             rb.velocity = new Vector3(movespeed, rb.velocity.y);
-            
+            sr.flipX = true;
         }
 
     }
