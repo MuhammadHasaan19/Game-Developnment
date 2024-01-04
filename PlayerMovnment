@@ -1,0 +1,57 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovnment : MonoBehaviour
+{   /* 
+      A-> Move left
+      D-> Move right
+      W-> Move up
+      S-> Move down
+
+  */
+  public float MoveSpeed =0.01f;
+  public BoxCollider boxCollider;
+
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        transform.position =new Vector3(0,0,0);
+        boxCollider = GetComponent<BoxCollider>();
+        
+    }
+
+    // Update is called once per frame
+    void Update(){
+    if(Input.GetKey(KeyCode.A)){
+
+        transform.position += new Vector3(-MoveSpeed,0,0);
+    }
+
+    if(Input.GetKey(KeyCode.D)){
+
+        transform.position += new Vector3(MoveSpeed,0,0);
+    }
+         
+    if(Input.GetKeyDown(KeyCode.W)){
+
+        transform.position += new Vector3(0,MoveSpeed,0);
+    }
+
+    if(Input.GetKeyUp(KeyCode.S)){
+
+        transform.position += new Vector3(0,-MoveSpeed,0);
+    }
+
+    // Triger ko Check or Unchecked karny k liyay
+    if(Input.GetKeyDown(KeyCode.T)){
+        if(boxCollider.isTrigger== true)
+            boxCollider.isTrigger = false;
+        else
+             boxCollider.isTrigger = true; 
+    }
+ }    
+    
+}
