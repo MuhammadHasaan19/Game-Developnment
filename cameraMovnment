@@ -7,7 +7,7 @@ public class cammovement : MonoBehaviour
 
     public GameObject player;
     public Vector3 offset = new Vector3(2,0,0);
-    // Start is called before the first frame update
+    // Start is called before the first frame update the number 
     void Start()
     {
         
